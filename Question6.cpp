@@ -27,14 +27,14 @@ void Decryption(){
     cout <<"*****************Write your Coded Massage****************\n";
     getline(cin,codedMsg);
 
-    vector<string> word;
-    stringstream ss(codedMsg);   //stringstream ss(sentence); → Breaks the sentence into words.
-    string word;
+    // vector<string> word;
+    // stringstream ss(codedMsg);   //stringstream ss(sentence); → Breaks the sentence into words.
+    // string word;
 
-    while (ss >> word)
-    {
-        word.push_back(word);
-    }
+    // while (ss >> word)
+    // {
+    //     word.push_back(word);
+    // }
     
 
     // int counter = 0;
