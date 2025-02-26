@@ -7,16 +7,21 @@ using std::cin;
 
 int main(){
 
-    int num, result = 0;
+    const int MIN = 1;
+    int num;
     cout<<"Enter value to find it's factorial: \n";
     cout<<"Enter: ";
     cin >> num;
-    int count = num;
+    int result = num;
 
-    while(count >= 1){
-        count--;
-        result = num*count;
+    while(num > MIN){
+        num --;
+        cout<<num <<"\n";
+        result = num*result;
+        
     }
+
+
     cout<< num <<"! 's value is: "<<result;
 
 }
