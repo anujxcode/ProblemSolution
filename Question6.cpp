@@ -1,7 +1,9 @@
 // program to encrypt and decrypt text in c++
 
+// librarys used
 #include <iostream>
 #include<string>
+#include<sstream>
 #include<vector>
 using namespace std;
 
@@ -10,8 +12,9 @@ using namespace std;
 void Encryption(){
     string msg;
     cout << "**************Write Your Massage**************\n";
-    getline(cin,msg);
+    getline(cin>>ws,msg);
 
+    cout<<"\n\nCoded***************************************: \n";
     int counter = 0;
     while(counter < msg.length()){
 
@@ -21,32 +24,46 @@ void Encryption(){
     
 
 }
-
+// Decrypiton funcction
 void Decryption(){
     string codedMsg;
     cout <<"*****************Write your Coded Massage****************\n";
-    getline(cin,codedMsg);
+    getline(cin>>ws,codedMsg);
 
-    // vector<string> word;
-    // stringstream ss(codedMsg);   //stringstream ss(sentence); → Breaks the sentence into words.
-    // string word;
+   stringstream ss(codedMsg); //create a string stream object
+   string word;
 
-    // while (ss >> word)
-    // {
-    //     word.push_back(word);
-    // }
-    
+   cout<<"\n\nDecoded***************************************: \n";
+   while(ss >> word){
+        cout << char(stoi(word)) <<"";
 
-    // int counter = 0;
-    // while(counter < codedMsg.length()){
-
-    //     cout << char(codedMsg[counter]) <<" ";
-    //     counter++;
-    // }
+   }
 }
 
+// Display function
+void Display(){
+    int opt;
+    do{
+        cout<<"\n\nPress: 1 for Encryption\nPress: 2 for Decryption\nPress: 3 for Exit\nEnter here: ";
+        cin >> opt;
 
+        switch(opt){
+            case 1:
+                Encryption();
+                break;
+            case 2:
+                Decryption();
+                break;
+            case 3:
+                cout<<"Exiting program.........";
+                break;
+            default:
+                cout<<"invalid";
+        }
+    }while(opt != 3);
+}
+
+// main function
 int main(){
-    // Encryption();
-    Decryption();
+    Display();
 }
